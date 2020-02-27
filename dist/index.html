@@ -8,10 +8,87 @@
 
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="icon" type="image/x-icon" href="favicon.ico">
-</head>
+  
+  <style>
+.radio-item {
+  display: inline-block;
+  position: relative;
+  padding: 0 6px;
+  margin: 10px 0 0;
+
+  content: " ";
+  display: inline-block;
+  position: relative;
+  top: 5px;
+  margin: 0 5px 0 0;
+  width: 20px;
+  height: 20px;
+  border-radius: 11px;
+  border: 2px solid #004c97; 
+  background-color: #00ff00;
+}
+.radio-item-red {
+  display: inline-block;
+  position: relative;
+  padding: 0 6px;
+  margin: 10px 0 0;
+
+  content: " ";
+  display: inline-block;
+  position: relative;
+  top: 5px;
+  margin: 0 5px 0 0;
+  width: 20px;
+  height: 20px;
+  border-radius: 11px;
+  border: 2px solid #800000; 
+  background-color: #e60000;
+}
+
+.radio-item input[type='radio'] {
+  display: none;
+}
+.radio-item -red input[type='radio'] {
+  display: none;
+}
+
+.radio-item label {
+  color: #666;
+  font-weight: normal;
+}
+
+
+.radio-item input[type=radio]:unchecked + label:after {
+  border-radius: 11px;
+  width: 12px;
+  height: 12px;
+  position: absolute;
+  top: 9px;
+  left: 10px;
+  content: " ";
+  display: block;
+  background: #00ff00;
+
+} 
+.radio-item-red input[type=radio]:unchecked + label:after {
+  border-radius: 11px;
+  width: 12px;
+  height: 12px;
+  position: absolute;
+  top: 9px;
+  left: 10px;
+  content: " ";
+  display: block;
+  background: #00ff00;
+
+} 
+
+  </style>
+
+<link rel="stylesheet" href="styles.4d523c3348d33c2010b3.css"></head>
 
 <body>
   <app-root></app-root>
-<script src="runtime.js" defer></script><script src="polyfills-es5.js" nomodule defer></script><script src="polyfills.js" defer></script><script src="styles.js" defer></script><script src="vendor.js" defer></script><script src="main.js" defer></script></body>
+<script src="runtime.458556a34b891ea32398.js" defer></script><script src="polyfills-es5.0abfcb0e874b3127ca8b.js" nomodule defer></script><script src="polyfills.d152df52cf236990827a.js" defer></script><script src="main.6c4c6faefc370d823b85.js" defer></script></body>
 
 </html>
