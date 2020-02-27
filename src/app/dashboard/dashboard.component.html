@@ -64,12 +64,9 @@
       </div>
     </div>
   </div>
-
- 
 <div class="row">
   <div class="col-lg-4 grid-margin stretch-card">
-    <!--weather card-->
-   
+    <!--Dashboard card-->
 <div class="row">
   <div class="col-lg-100 grid-margin">
     <div class="card">
@@ -83,7 +80,7 @@
                   Projects
                 </th>
                 <th>
-                 Status
+                  Status
                 </th>
                 <th>
                   Endpoints
@@ -94,56 +91,27 @@
               </tr>
             </thead>
             <tbody>
-              <tr>
+              <tr  *ngFor="let data of retrieved_data">
                 <td>
-                  Time Entry
+                  {{data.project}}
                 </td>
                 <td>
+                <div *ngIf=" data.status === 200; then thenBlock else elseBlock "></div>
+                <ng-template #thenBlock>
                  <div class="radio-item">
-                  <input type="radio" id="materialCheckedDisabled2" name="disabledGroupExample2">
-                  <label for="materialCheckedDisabled2"></label>
+                  <label for="radio1"></label>
                 </div>
-                </td>
-                <td>
-                  https://employeeservice002.herokuapp.com/v1/api/employee/{{id}}
-                </td>
-                <td class="text-success"> GET
-                  <i class="mdi mdi-arrow-up"></i>
-                </td>
-            
-              </tr>
-              <tr>
-                <td>
-                  Pollster
-                </td>
-                <td>
-                   <div class="radio-item">
-                  <input type="radio" id="materialCheckedDisabled2" name="disabledGroupExample2">
-                  <label for="materialCheckedDisabled2"></label>
+                </ng-template>
+                <ng-template #elseBlock>
+                <div class="radio-item-red">
+                  <label for="radio1"></label>
                 </div>
+                </ng-template>
                 </td>
                 <td>
-                  https://employeeservice002.herokuapp.com/v1/api/employees
+                  {{data.endpoint}}
                 </td>
-                <td class="text-success"> GET
-                  <i class="mdi mdi-arrow-up"></i>
-                </td>
-               
-              </tr>
-              <tr>
-                <td>
-                  Holiday Me
-                </td>
-                <td>
-                  <div class="radio-item">
-                  <input type="radio" id="materialCheckedDisabled2" name="disabledGroupExample2">
-                  <label for="materialCheckedDisabled2"></label>
-                </div>
-                </td>
-                <td>
-                  https://timeentry002.herokuapp.com/v1/api/projects
-                </td>
-                <td class="text-success"> GET
+                <td class="text-success"> {{data.requestmethod}}
                   <i class="mdi mdi-arrow-up"></i>
                 </td>
               </tr>
