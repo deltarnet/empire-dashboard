@@ -2,7 +2,9 @@
   <div class="col-lg-100 grid-margin">
     <div class="card">
       <div class="card-body">
+      <hr>
         <h4 class="card-title">Current Status</h4>
+        <hr>
         <div class="table-responsive">
           <table class="table table-bordered">
             <thead>
@@ -42,7 +44,8 @@
                 <td>
                   {{data.endpoint}}
                 </td>
-                <td class="text-success"> {{data.requestmethod}}
+                <td class="text-success"> 
+                  {{data.requestmethod}}
                   <i class="mdi mdi-arrow-up"></i>
                 </td>
               </tr>
@@ -55,145 +58,3 @@
 </div>
 
 
-<!--<div class="row">
-  <div class="col-lg-100 grid-margin">
-    <div class="card">
-      <div class="card-body">
-      <hr>
-        <h4 class="card-title">Current Status</h4>
-        <hr>
-        <div class="table-responsive">
-          <table class="table table-bordered">
-            <thead>
-              <tr>
-                <th>
-                 Status
-                </th>
-                <th>
-                  Endpoints
-                </th>
-                <th>
-                  Request Methods
-                </th>
-              </tr>
-            </thead>
-            <tbody>
-              <tr>
-                <td>
-                 <div class="radio-item">
-                  <input type="radio" id="radio1" name="radio">
-                  <label for="radio1"></label>
-                </div>
-                </td>
-                <td>
-                  https://employeeservice002.herokuapp.com/v1/api/employee/{{id}}
-                </td>
-                <td class="text-success"> GET
-                  <i class="mdi mdi-arrow-up"></i>
-                </td>
-              </tr>
-              <tr>
-                <td>
-                   <div class="radio-item">
-                  <input type="radio" id="radio1" name="radio">
-                  <label for="radio"></label>
-                </div>
-                </td>
-                <td>
-                  https://employeeservice002.herokuapp.com/v1/api/employees
-                </td>
-                <td class="text-success"> GET
-                  <i class="mdi mdi-arrow-up"></i>
-                </td>
-              </tr>
-              <tr>
-                <td>
-                  <div class="radio-item">
-                  <input type="radio" id="radio1" name="radio">
-                  <label for="radio1"></label>
-                </div>
-                </td>
-                <td>
-                  https://timeentry002.herokuapp.com/v1/api/projects
-                </td>
-                <td class="text-success"> GET
-                  <i class="mdi mdi-arrow-up"></i>
-                </td>
-              </tr>
-              <tr>
-                <td>
-                   <div class="radio-item">
-                  <input type="radio" id="radio1" name="radio">
-                  <label for="radio1"></label>
-                </div>
-                </td>
-                <td>
-                  https://timeentry002.herokuapp.com/v1/api/getloggedproject
-                </td>
-                <td class="text-success"> GET
-                  <i class="mdi mdi-arrow-up"></i>
-                </td>
-              </tr>
-              <tr>
-                <td>
-                 <div class="radio-item">
-                  <input type="radio" id="radio1" name="radio">
-                  <label for="radio1"></label>
-                </div>
-                </td>
-                <td>
-                  https://timeentry002.herokuapp.com/v1/api/getloggedsick
-                </td>
-                <td class="text-success"> GET
-                  <i class="mdi mdi-arrow-up"></i>
-                </td>
-              </tr>
-              <tr>
-                <td>
-                  <div class="radio-item">
-                  <input type="radio" id="radio1" name="radio">
-                  <label for="radio1"></label>
-                </div>
-                </td>
-                <td>
-                  https://timeentry002.herokuapp.com/v1/api/getloggedvacation
-                </td>
-                <td class="text-success"> GET
-                  <i class="mdi mdi-arrow-up"></i>
-                </td>
-              </tr>
-               <tr>
-                <td>
-                  <div class="radio-item">
-                  <input type="radio" id="radio1" name="radio">
-                  <label for="radio1"></label>
-                </div>
-                </td>
-                <td>
-                  https://timeentry002.herokuapp.com/v1/api/{{end_date}}
-                </td>
-                <td class="text-success"> GET
-                  <i class="mdi mdi-arrow-up"></i>
-                </td>            
-              </tr>
-              <tr>
-                <td>
-                  <div class="radio-item">
-                  <input type="radio" id="radio1" name="radio">
-                  <label for="radio1"></label>
-                </div>
-                </td>
-                <td>
-                  https://timeentry002.herokuapp.com/v1/api/projects/assigned/employee/{{id}}
-                </td>
-                <td class="text-success"> GET
-                  <i class="mdi mdi-arrow-up"></i>
-                </td>            
-              </tr>
-            </tbody>
-          </table>
-        </div>
-      </div>
-    </div>
-  </div>
-</div> -->

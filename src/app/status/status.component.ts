@@ -23,8 +23,14 @@ export class StatusComponent implements OnInit {
         project: "Pollster",
         status: 500,
         endpoint: "https://employeeservice002.herokuapp.com/v1/api/employees",
-        requestmethod: ""
-    }
+        requestmethod: "GET"
+    },
+    {
+      project: "Chess",
+      status: 500,
+      endpoint: "https://projectervice002.herokuapp.com/v1/api/employee/",
+      requestmethod: "GET"
+  }
 ]; 
 
   constructor() { }
