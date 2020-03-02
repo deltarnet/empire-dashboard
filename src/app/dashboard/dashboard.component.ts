@@ -16,7 +16,7 @@ export interface StatusData {
     encapsulation: ViewEncapsulation.None
 })
 export class DashboardComponent implements OnInit {
-  retrieved_data: StatusData[] = [
+    retrieved_data: StatusData[] = [
     {
         project: "Time Entry System",
         status: 200,
