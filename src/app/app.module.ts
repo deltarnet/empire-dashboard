@@ -10,7 +10,6 @@ import { SidebarComponent } from './sidebar/sidebar.component';
 import { FooterComponent } from './footer/footer.component';
 import { DashboardComponent } from './dashboard/dashboard.component';
 import { StatusComponent } from './status/status.component';
-import { PostFormComponent } from './post-Form/post-Form.component';
 import { HttpClientModule } from '@angular/common/http';
 
 
@@ -22,8 +21,7 @@ import { HttpClientModule } from '@angular/common/http';
         FooterComponent,
         DashboardComponent,
         StatusComponent, 
-        HttpClientModule,
-        PostFormComponent
+        HttpClientModule
     ],     
     imports: [
         BrowserModule,
