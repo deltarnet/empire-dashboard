@@ -1,22 +1,23 @@
-import { Component, OnInit } from '@angular/core';
-import { ViewEncapsulation } from '@angular/core';
-import { Turntabl_Project, Endpoints, Status } from "../endpoints";
-import { EmpireService } from '../empire.service';
+import {Component, OnInit} from '@angular/core';
+import {ViewEncapsulation} from '@angular/core';
+import {Turntabl_Project, Endpoints, Status} from "../endpoints";
+// import { EmpireService } from '../empire.service';
 
 @Component({
     selector: 'app-dashboard',
     templateUrl: './dashboard.component.html',
-    styleUrls: ['../app.component.scss', './dashboard.component.scss'], 
+    styleUrls: [
+        '../app.component.scss', './dashboard.component.scss'
+    ],
     encapsulation: ViewEncapsulation.None
 })
 export class DashboardComponent implements OnInit {
 
-    project: Turntabl_Project[] = [];
-    endpoint: Endpoints;
-    status: Status;
+    project : Turntabl_Project[] = [];
+    endpoint : Endpoints;
+    status : Status;
 
-    constructor(private appservice: EmpireService) {
-        ;
+    constructor() {;
         // this.project = {
         //     project_id: 1,
         //     project_name: ""
@@ -36,8 +37,7 @@ export class DashboardComponent implements OnInit {
         // }
     }
 
-    ngOnInit() {
-        this.appservice.getProjects().subscribe(response => { console.log(response) })
+    ngOnInit() { // this.appservice.getProjects().subscribe(response => { console.log(response) })
     };
     // data
 }

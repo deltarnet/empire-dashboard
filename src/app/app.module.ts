@@ -1,5 +1,6 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
+import { CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
 import { RouterModule } from '@angular/router';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { AppRoutingModule } from './app-routing.module';
@@ -20,8 +21,8 @@ import { HttpClientModule } from '@angular/common/http';
         SidebarComponent,
         FooterComponent,
         DashboardComponent,
-        StatusComponent, 
-        HttpClientModule
+        StatusComponent
+        
     ],     
     imports: [
         BrowserModule,
@@ -29,7 +30,9 @@ import { HttpClientModule } from '@angular/common/http';
         AppRoutingModule,
         FormsModule,
         ReactiveFormsModule,
+        HttpClientModule,
         NgbModule],
     providers: [],
-    bootstrap: [AppComponent]
+    bootstrap: [AppComponent],
+    schemas: [CUSTOM_ELEMENTS_SCHEMA]
 }) export class AppModule { }
