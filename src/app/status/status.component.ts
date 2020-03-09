@@ -2,9 +2,15 @@ import {Component, OnInit} from '@angular/core';
 import {ViewEncapsulation} from '@angular/core';
 import {EmpireService} from '../empire.service';
 import {Status} from '../endpoints';
+import { RouterModule } from '@angular/router';
 
 
-@Component({selector: 'app-status', templateUrl: './status.component.html', styleUrls: ['./status.component.scss'], encapsulation: ViewEncapsulation.None})
+@Component({
+    selector: 'app-status', templateUrl: './status.component.html',
+    styleUrls: ['./status.component.scss'],
+    encapsulation: ViewEncapsulation.None
+})
+    
 export class StatusComponent implements OnInit {
     retrieved_data : Status[] = [];
 
