@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { HttpClient, HttpHeaders  } from "@angular/common/http";
+import { HttpClient } from "@angular/common/http";
 import { Observable } from 'rxjs'
 import { Turntabl_Project, Endpoints, Status } from './endpoints';
 
@@ -7,7 +7,7 @@ import { Turntabl_Project, Endpoints, Status } from './endpoints';
   providedIn: 'root'
 })
 export class EmpireService {
-  testUrl:string = 'http://192.168.8.122:8050/:8050/api/v1/status'
+  testUrl:string = 'http://192.168.8.122:8050/api/v1/status'
   
   constructor(private http: HttpClient) {
     this.http.get<any>(window.location.origin + '/').subscribe(res => {
@@ -33,7 +33,7 @@ export class EmpireService {
   }
 
   getStatus(): Observable<Status[]> {
-      return this.http.get<Status[]>(this.testUrl);
+    return this.http.get<Status[]>(this.testUrl);
   }
   
 }

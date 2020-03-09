@@ -1,8 +1,12 @@
 import {Component, OnInit} from '@angular/core';
 import {ViewEncapsulation} from '@angular/core';
-import {Turntabl_Project, Endpoints, Status} from "../endpoints";
-// import { EmpireService } from '../empire.service';
 
+export interface StatusData {
+    project: string;
+    status: number;
+    endpoint: string;
+    requestmethod: string;
+}
 @Component({
     selector: 'app-dashboard',
     templateUrl: './dashboard.component.html',
@@ -12,32 +16,27 @@ import {Turntabl_Project, Endpoints, Status} from "../endpoints";
     encapsulation: ViewEncapsulation.None
 })
 export class DashboardComponent implements OnInit {
+    retrieved_data: StatusData[] = [
+    {
+        project: "Time Entry System",
+        status: 200,
+        endpoint: "https://projectervice002.herokuapp.com/v1/api/employee/",
+        requestmethod: "GET"
+    },
+    {
+        project: "Pollster",
+        status: 200,
+        endpoint: "https://employeeservice002.herokuapp.com/v1/api/employees",
+        requestmethod: "GET"
+    },
+    {
+    project: "Chess",
+    status: 500,
+    endpoint: "https://projectervice002.herokuapp.com/v1/api/employee/",
+    requestmethod: "GET"
+}
+]; 
+    constructor() {}
 
-    project : Turntabl_Project[] = [];
-    endpoint : Endpoints;
-    status : Status;
-
-    constructor() {;
-        // this.project = {
-        //     project_id: 1,
-        //     project_name: ""
-        // };
-
-        // this.endpoint = {
-        //     endpoint_id: 1,
-        //     project_id: 1,
-        //     endpoint_url: "",
-        //     request_method: ""
-        // }
-
-        // this.status = {
-        //     project_name: "",
-        //     status: 200,
-        //     endpoint_id: 1
-        // }
-    }
-
-    ngOnInit() { // this.appservice.getProjects().subscribe(response => { console.log(response) })
-    };
-    // data
+    ngOnInit() {}
 }

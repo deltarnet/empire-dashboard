@@ -19,21 +19,9 @@
       </a>
     </li>
     <li class="nav-item">
-      <a class="nav-link" routerLink="/status" routerLinkActive="active">
+      <a class="nav-link" *ngFor="let data of retrieved_data" (click)="onSelect(data)" routerLink="/status" routerLinkActive="active">
         <i class="menu-icon mdi mdi-notification-clear-all"></i>
-        <span class="menu-title">TIME ENTRY</span>
-      </a>
-    </li>
-     <li class="nav-item">
-      <a class="nav-link">
-        <i class="menu-icon mdi mdi-notification-clear-all"></i>
-        <span class="menu-title">POLLSTER</span>
-      </a>
-    </li>
-     <li class="nav-item">
-      <a class="nav-link">
-        <i class="menu-icon mdi mdi-notification-clear-all"></i>
-        <span class="menu-title">CHESS</span>
+        <span class="menu-title">{{data.project}}</span> 
       </a>
     </li>
   </ul>
