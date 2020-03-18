@@ -1,3 +1,4 @@
+  
 export class Turntabl_Project {
     project_id: number
     project_name: string
@@ -13,8 +14,10 @@ export class Endpoints{
 }
 
 export class Status{
-    project_name: string
+    project_id: number
+    endpoint_url: string
     status: number
     endpoint_id: number
+    request_method: string
+    project_name: string
 }
-

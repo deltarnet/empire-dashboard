@@ -1,0 +1,11 @@
+<form [formGroup]="user">
+  <input formControlName="name" />
+
+   <ng-container formArrayName="skills">
+    <option *ngFor="let skill of skills.controls; index as i" placeholder="enter skills">
+    <input [formControlName]="i" />
+
+    </option>
+  </ng-container>
+  
+</form>

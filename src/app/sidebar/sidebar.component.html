@@ -19,9 +19,9 @@
       </a>
     </li>
     <li class="nav-item">
-      <a class="nav-link" *ngFor="let data of retrieved_data" (click)="onSelect(data)" routerLink="/status" routerLinkActive="active">
+      <a class="nav-link" *ngFor="let data of listed_data" (click)="onSelect(data)" [routerLink]="['/status',data.project_id]" routerLinkActive="active">
         <i class="menu-icon mdi mdi-notification-clear-all"></i>
-        <span class="menu-title">{{data.project}}</span> {{data.id}}
+        <span class="menu-title">{{data.project_name}}</span> 
       </a>
     </li>
   </ul>

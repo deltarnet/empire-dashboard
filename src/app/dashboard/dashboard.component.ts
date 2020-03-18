@@ -1,12 +1,9 @@
 import {Component, OnInit} from '@angular/core';
 import {ViewEncapsulation} from '@angular/core';
+import {Status} from "../endpoints";
+import {EmpireService} from '../empire.service';
 
-export interface StatusData {
-    project: string;
-    status: number;
-    endpoint: string;
-    requestmethod: string;
-}
+
 @Component({
     selector: 'app-dashboard',
     templateUrl: './dashboard.component.html',
@@ -16,27 +13,17 @@ export interface StatusData {
     encapsulation: ViewEncapsulation.None
 })
 export class DashboardComponent implements OnInit {
-    retrieved_data: StatusData[] = [
-    {
-        project: "Time Entry System",
-        status: 200,
-        endpoint: "https://projectervice002.herokuapp.com/v1/api/employee/",
-        requestmethod: "GET"
-    },
-    {
-        project: "Pollster",
-        status: 200,
-        endpoint: "https://employeeservice002.herokuapp.com/v1/api/employees",
-        requestmethod: "GET"
-    },
-    {
-    project: "Chess",
-    status: 500,
-    endpoint: "https://projectervice002.herokuapp.com/v1/api/employee/",
-    requestmethod: "GET"
-}
-]; 
-    constructor() {}
+    retrieved_data : Status[] = [];
 
-    ngOnInit() {}
+    constructor(private appservice : EmpireService) {;
+    }
+
+    ngOnInit() {
+        this.appservice.getStatus().subscribe(response => {
+            this.retrieved_data = response
+            // console.log("Response oooooooo ",response);
+
+        })
+    }
+
 }

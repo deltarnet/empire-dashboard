@@ -1,45 +1,44 @@
-import { Component, OnInit } from '@angular/core';
+import {
+    Component, OnInit
+}
+from '@angular/core';
+import {
+    FormArray, FormControl
+}
+from '@angular/forms';
+
 
 @Component({
+  template: '',
   selector: 'app-form',
   templateUrl: './form.component.html',
   styleUrls: ['./form.component.scss']
-})
-export class FormComponent implements OnInit{
-  public projects: any[] = [{
-    project: '',
-    endpoint: ''
-  }];
 
-  public endpoints: any[] = [{
-    endpoint: ''
-  }];
+}) export class FormComponent implements OnInit {
 
-  constructor() { }
+    public projects: any[] = [{ project: '' }];
 
-  ngOnInit() {
-  }
+    public endpoints: any[] = [{ endpoint: '' }];
 
-  addProject() {
-    this.projects.push({
-      project: '',
-      endpoint: '',
-      country: ''
-    });
-  }
+    constructor() {}
 
-  addEndpoint() {
-    this.endpoints.push({
-      endpoint: ''
-    });
-  }
+    ngOnInit() {}
 
-  removeProject(i: number) {
-    this.projects.splice(i, 1);
-  }
+    addProject() {
+        this.projects.push({ project: '' });
+    }
 
-  logValue() {
-    console.log(this.projects);
-  }
 
+    addEndpoint() {
+        this.endpoints.push({ endpoint: '' });
+    }
+
+    removeProject(i: number) {
+        this.projects.splice(i, 1);
+    }
+
+    logValue() {
+      console.log(this.projects);
+      console.log(this.endpoints);
+    }
 }

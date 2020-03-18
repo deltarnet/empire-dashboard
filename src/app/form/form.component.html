@@ -1,43 +1,31 @@
-<form #projectForm="ngForm" class="container mt-3" (ngSubmit)="logValue()">
-  <div class="row justify-content-left">
-    <div class="col-6">
-        <button type="button" class="btn btn-primary mb-2" (click)="addProject()">Add New Project</button>
-      <section class="container border mb-4 p-3" *ngFor="let Project of projects; let i = index;">
-        <div class="row">
-          <div class="col-6">
-              <h4>Projects {{i + 1}}</h4>
-          </div>
-          <div class="col-6 text-right">
-              <button type="button" class="btn btn-danger btn-sm" (click)="removeProject(i)">Remove</button>
-          </div>
-        </div>
-        <div class="row">
-          <div class="col-7">
+<div class="row" (ngSubmit)="logValue()">
+  <div class="col-md-6 d-flex align-items-stretch grid-margin">
+    <div class="row flex-grow">
+      <div class="col-12 grid-margin">
+        <div class="card">
+          <div class="card-body">
+          <hr>
+          <h4 class="card-title">Entry form</h4>
+          <hr>
+         
+            <form class="forms-sample">
               <div class="form-group">
-                  <input type="text" class="form-control" [(ngModel)]="projects.project" name="project_{{i}}"  placeholder="Projects  "/>
-                </div>
+                <h3 for="exampleInputEmail1">Project Name</h3>
+                <input type="Project" class="form-control" id="exampleInputProjectName" placeholder="Enter Project Name">
+              </div>
+              <div class="form-group">
+               <button type="button" class="btn btn-primary mb-2" (click)="addProject()">New Endpoints  + </button>
+                <label for="exampleInputEndpoint"></label>
+                <input  *ngFor="let Endpoint of projects; let i = index;" type="endpoint" class="form-control" id="exampleInputEndpoint" placeholder="Enter Endpoint_url">
+                <br>
+                <!-- <button class="mdi mdi-plus"  class="btn btn-primary mb-2">+</button> -->
+              </div>
+              <button type="submit" class="btn btn-success mr-2">POST</button>
+              <button  type="submit" class="btn btn-danger mr-2" routerLink="/dashboard" routerLinkActive="active">Cancel</button>
+            </form>
+          <div class="text-right">
+              <input type="submit" class="btn btn-success" value="Submit"/>
+          </div>
           </div>
         </div>
-        <div class="row">
-          <div class="col-7">
-              <div class="form-group"  *ngFor="let endpoint of projects.endpoint; let i = index">
-                  <h4>Endpoints</h4>
-                  <input type="text" class="form-control" [(ngModel)]="projects.endpoint" name="endpoint_{{i}}" (keyup.enter)="addEndpoint()" placeholder="Enter Endpoint_Url {{i + 1}}"/>
-                </div>
-          </div>
-        </div>
-      </section>
-
-      <div class="text-right">
-          <input type="submit" class="btn btn-success" value="Submit"/>
       </div>
-    </div>
-  </div>
-</form>
-
-
-
-
-
-
-
