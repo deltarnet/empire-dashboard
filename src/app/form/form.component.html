@@ -1,31 +1,27 @@
-<div class="row" (ngSubmit)="logValue()">
+
+
+<div class="row">
   <div class="col-md-6 d-flex align-items-stretch grid-margin">
     <div class="row flex-grow">
       <div class="col-12 grid-margin">
         <div class="card">
           <div class="card-body">
           <hr>
-          <h4 class="card-title">Entry form</h4>
+          <h3 class="card-title">Entry form</h3>
           <hr>
-         
-            <form class="forms-sample">
+            <form class="forms-sample" (ngSubmit)="logValue()">
               <div class="form-group">
-                <h3 for="exampleInputEmail1">Project Name</h3>
+                <h5 for="exampleInputEmail1">Project Name</h5>
                 <input type="Project" class="form-control" id="exampleInputProjectName" placeholder="Enter Project Name">
               </div>
               <div class="form-group">
-               <button type="button" class="btn btn-primary mb-2" (click)="addProject()">New Endpoints  + </button>
-                <label for="exampleInputEndpoint"></label>
-                <input  *ngFor="let Endpoint of projects; let i = index;" type="endpoint" class="form-control" id="exampleInputEndpoint" placeholder="Enter Endpoint_url">
+               <button type="button" class="btn btn-primary mb-2" (click)="addEndpoint()">New Endpoints  + </button>
+                <input *ngFor="let Endpoint of endpoints; let i = index;"  [(ngModel)]="endpoints.endpoint" name="endpointt_{{i}}" type="endpoints" class="form-control" id="exampleInputEndpoint" placeholder="Enter Endpoint_url">
                 <br>
-                <!-- <button class="mdi mdi-plus"  class="btn btn-primary mb-2">+</button> -->
               </div>
-              <button type="submit" class="btn btn-success mr-2">POST</button>
               <button  type="submit" class="btn btn-danger mr-2" routerLink="/dashboard" routerLinkActive="active">Cancel</button>
+              <button type="submit" class="btn btn-success mr-2" value="Submit">Submit</button>
             </form>
-          <div class="text-right">
-              <input type="submit" class="btn btn-success" value="Submit"/>
-          </div>
           </div>
         </div>
       </div>

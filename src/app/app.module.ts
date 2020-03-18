@@ -13,7 +13,7 @@ import { DashboardComponent } from './dashboard/dashboard.component';
 import { StatusComponent } from './status/status.component';
 import { HttpClientModule } from '@angular/common/http';
 import { FormComponent } from './form/form.component';
-import { UserComponent } from './user/user.component';
+
 
 
 @NgModule({
@@ -24,8 +24,7 @@ import { UserComponent } from './user/user.component';
         FooterComponent,
         DashboardComponent,
         StatusComponent,
-        FormComponent,
-        UserComponent
+        FormComponent
         
     ],     
     imports: [

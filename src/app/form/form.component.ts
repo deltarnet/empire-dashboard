@@ -1,12 +1,4 @@
-import {
-    Component, OnInit
-}
-from '@angular/core';
-import {
-    FormArray, FormControl
-}
-from '@angular/forms';
-
+import { Component, OnInit } from '@angular/core';
 
 @Component({
   template: '',
@@ -18,7 +10,7 @@ from '@angular/forms';
 
     public projects: any[] = [{ project: '' }];
 
-    public endpoints: any[] = [{ endpoint: '' }];
+    public endpoints: any[] = [{ endpoints: '' }];
 
     constructor() {}
 
@@ -27,14 +19,8 @@ from '@angular/forms';
     addProject() {
         this.projects.push({ project: '' });
     }
-
-
     addEndpoint() {
         this.endpoints.push({ endpoint: '' });
-    }
-
-    removeProject(i: number) {
-        this.projects.splice(i, 1);
     }
 
     logValue() {
