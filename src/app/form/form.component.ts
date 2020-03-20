@@ -1,7 +1,8 @@
 import {Component, OnInit} from '@angular/core';
 import {NgForm} from '@angular/forms';
 
-@Component({template: '', selector: 'app-form', templateUrl: './form.component.html', styleUrls: ['./form.component.scss']})export class FormComponent implements OnInit {
+@Component({template: '', selector: 'app-form', templateUrl: './form.component.html', styleUrls: ['./form.component.scss']})
+export class FormComponent implements OnInit {
 
     public projects : any[] = [{
             project: ''
@@ -21,10 +22,12 @@ import {NgForm} from '@angular/forms';
     addEndpoint() {
         this.endpoints.push({endpoint: ''});
     }
+    removeEndpoint(i : number) {
+        this.endpoints.splice(i, 1);
+    }
 
     logValue(form : NgForm) {
-        // const value = projName.value;
-        // console.log(value)
+
         console.log(form.value)
         form.reset()
         // console.log(value.projectName)
@@ -33,4 +36,5 @@ import {NgForm} from '@angular/forms';
         // console.log(this.projects);
         // console.log(this.endpoints);
     }
+
 }
