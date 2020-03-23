@@ -3,7 +3,11 @@ import {EmpireService} from '../empire.service';
 import {Status} from '../endpoints';
 import {ActivatedRoute} from '@angular/router';
 
-@Component({selector: 'app-status', templateUrl: './status.component.html', styleUrls: ['./status.component.scss']})
+@Component({
+    selector: 'app-status', 
+    templateUrl: './status.component.html',
+    styleUrls: ['./status.component.scss']
+})
 
 export class StatusComponent implements OnInit {
     retrieved_data : Status[] = [];
@@ -24,7 +28,8 @@ export class StatusComponent implements OnInit {
     }
 
     load_project_status(project_id) {
-        this.appservice.getStatusByProjectId(project_id).subscribe(response => {
+        this.appservice.getStatusByProjectId(project_id)
+        .subscribe(response => {
             this.retrieved_data = response
 
             // console.log("Response oooooooo ",response);
