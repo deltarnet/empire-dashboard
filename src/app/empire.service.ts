@@ -3,41 +3,43 @@ import { HttpClient } from "@angular/common/http";
 import { Observable } from 'rxjs'
 import { Turntabl_Project, Endpoints, Status } from './endpoints';
 
-@Injectable({providedIn: 'root'}) export class EmpireService {
+@Injectable({providedIn: 'root'})
 
-    testUrl: string = 'http://localhost:8050/api/v1/status/'
-    turntablproject_url: string = 'http://localhost:8050/api/v1/projects'
+ export class EmpireService {
 
-    constructor(private http: HttpClient) {
-        this.http.get<any>(window.location.origin + '/').subscribe(res => {
-            sessionStorage.setItem('turntablproject_url', res.turntablproject_url)
-            sessionStorage.setItem('endpoints_url', res.endpoints_url)
-        })
-    }
-    getProjects():Observable < Turntabl_Project[] > {
-        // return this.http.get<Turntabl_Project[]>(sessionStorage.getItem('turntablproject_url'));
-        return this.http.get<Turntabl_Project[]>(this.turntablproject_url);
-    }
+    testUrl:string = 'http://localhost:8050/api/v1/status/'
+  turntablproject_url:string = 'http://localhost:8050/api/v1/projects'
 
-    getProjectById(id : number):Observable < Turntabl_Project > {
-        return this.http.get<Turntabl_Project>(this.turntablproject_url + id);
-    }
+  constructor(private http: HttpClient) {
+    this.http.get<any>(window.location.origin + '/').subscribe(res => {
+      sessionStorage.setItem('turntablproject_url', res.turntablproject_url)
+      sessionStorage.setItem('endpoints_url', res.endpoints_url)
+    })
+  }
+  getProjects(): Observable<Turntabl_Project[]> {
+    // return this.http.get<Turntabl_Project[]>(sessionStorage.getItem('turntablproject_url'));
+    return this.http.get<Turntabl_Project[]>(this.turntablproject_url);
+  }
+  
+  getProjectById(id: number): Observable<Turntabl_Project>{
+    return this.http.get<Turntabl_Project>(this.turntablproject_url + id);
+  }
 
-    getEndpoints():Observable < Endpoints[] > {
-        return this.http.get<Endpoints[]>(sessionStorage.getItem('endpoints_url'));
-    }
+  getEndpoints(): Observable<Endpoints[]> {
+    return this.http.get<Endpoints[]>(sessionStorage.getItem('endpoints_url'));
+  }
+  
+  getEndpointById(id: number): Observable<Endpoints>{
+    return this.http.get<Endpoints>(sessionStorage.getItem('endpoints_url') + id);
+  }
 
-    getEndpointById(id : number):Observable < Endpoints > {
-        return this.http.get<Endpoints>(sessionStorage.getItem('endpoints_url') + id);
-    }
+  getStatus(): Observable<Status[]> {
+  // return this.http.get<Status[]>(sessionStorage.getItem('status_url'));
+  return this.http.get<Status[]>(this.testUrl);
+  }
 
-    getStatus():Observable < Status[] > {
-        // return this.http.get<Status[]>(sessionStorage.getItem('status_url'));
-        return this.http.get<Status[]>(this.testUrl);
-    }
-
-    getStatusByProjectId(project_id : number):Observable < Status[] > {
-        return this.http.get<Status[]>(this.testUrl + project_id);
-    }
-
+  getStatusByProjectId(project_id: number): Observable<Status[]> {
+    return this.http.get<Status[]>(this.testUrl + project_id);
+  }
+  
 }

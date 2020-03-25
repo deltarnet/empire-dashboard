@@ -15,7 +15,6 @@ import { HttpClientModule } from '@angular/common/http';
 import { FormComponent } from './form/form.component';
 
 
-
 @NgModule({
     declarations: [
         AppComponent,
@@ -25,7 +24,8 @@ import { FormComponent } from './form/form.component';
         DashboardComponent,
         StatusComponent,
         FormComponent
-        
+
+
     ],     
     imports: [
         BrowserModule,
@@ -34,7 +34,10 @@ import { FormComponent } from './form/form.component';
         FormsModule,
         ReactiveFormsModule,
         HttpClientModule,
-        NgbModule],
+        NgbModule
+    ],
+
+
     providers: [],
     bootstrap: [AppComponent],
     schemas: [CUSTOM_ELEMENTS_SCHEMA]
