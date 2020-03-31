@@ -14,7 +14,7 @@ import { NgForm } from '@angular/forms';
 
     public endpoints: any[] = [{ endpoints: '' }];
 
-    public request_methods: any[] = [{ requestMethods: '' }];
+    public requestMethods: any[] = [{ requestMethods: '' }];
 
     constructor() {}
 
@@ -23,13 +23,14 @@ import { NgForm } from '@angular/forms';
     addProject() {
         this.projects.push({project: ''});
     }
+
+    addRequestMethod() {
+        this.requestMethods.push({requestMethods: ''});
+    }
     addEndpoint() {
         this.endpoints.push({endpoints: ''});
     }
 
-    addRequestMethod() {
-        this.request_methods.push({requestMethods: ''});
-    }
     removeEndpoint(i : number) {
         this.endpoints.splice(i, 1);
     }

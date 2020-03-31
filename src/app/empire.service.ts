@@ -4,7 +4,6 @@ import { Observable } from 'rxjs'
 import { Turntabl_Project, Endpoints, Status } from './endpoints';
 
 @Injectable({providedIn: 'root'})
-
  export class EmpireService {
 
     testUrl:string = 'http://localhost:8050/api/v1/status/'

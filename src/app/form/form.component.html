@@ -5,7 +5,7 @@
           <div class="card">
             <div class="card-body">
             <hr>
-            <h3 class="card-title">Entry form</h3>
+            <h3 class="card-title">Entry</h3>
             <hr>
               <form class="forms-sample" (ngSubmit)="logValue(f)" #f="ngForm">
                 <div class="form-group" >
@@ -19,7 +19,17 @@
                   required>
                 </div>
                 <div class="form-group">
-                 <button type="button" class="btn btn-primary mb-2" (click)="addEndpoint()">New Endpoints  + </button>
+                  <h5 for="exampleInputrequestMethod">Request Method</h5>
+                    <input type="Request"
+                    class="form-control" 
+                    id="exampleInputrequestMethod"
+                    placeholder="Enter Request Method" 
+                    name="requestMethod"
+                    ngModel
+                     required>
+                  </div>
+                <div class="form-group">
+                 <button type="button" class="btn btn-primary mb-2" (click)="addEndpoint()">New Endpoints+ </button>
                   <input 
                   *ngFor="let endpoint of endpoints
                    let i = index;"  
@@ -33,15 +43,6 @@
                    required>
                   <br>
                 </div>
-                <div class="col-6">
-                  <div class="form-group-right">
-                    <h5 for="exampleInputProjectName">Request Method</h5>
-                      <select class="form-control" formControlName="Request" placeholder=" ">
-                        <option value="post">POST</option>
-                        <option value="get">GET</option>
-                      </select>
-                    </div>
-              </div>
                 <div class="col-12 text-right">
                 <button type="button" class="btn btn-danger btn-sm" (click)="removeEndpoint(i)"> Endpoint X</button>
             </div>
