@@ -1,3 +1,4 @@
+ 
 <nav class="sidebar sidebar-offcanvas" id="sidebar">
   <ul class="nav">
     <li class="nav-item nav-profile">
@@ -19,21 +20,9 @@
       </a>
     </li>
     <li class="nav-item">
-      <a class="nav-link" routerLink="/status" routerLinkActive="active">
+      <a class="nav-link" *ngFor="let data of listed_data" (click)="onSelect(data)" [routerLink]="['/status',data.project_id]" routerLinkActive="active">
         <i class="menu-icon mdi mdi-notification-clear-all"></i>
-        <span class="menu-title">TIME ENTRY</span>
-      </a>
-    </li>
-     <li class="nav-item">
-      <a class="nav-link">
-        <i class="menu-icon mdi mdi-notification-clear-all"></i>
-        <span class="menu-title">POLLSTER</span>
-      </a>
-    </li>
-     <li class="nav-item">
-      <a class="nav-link">
-        <i class="menu-icon mdi mdi-notification-clear-all"></i>
-        <span class="menu-title">CHESS</span>
+        <span class="menu-title">{{data.project_name}}</span> 
       </a>
     </li>
   </ul>

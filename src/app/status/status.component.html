@@ -26,7 +26,7 @@
             <tbody>
               <tr  *ngFor="let data of retrieved_data">
                 <td>
-                  {{data.project}}
+                  {{data.project_name}}
                 </td>
                 <td>
                 <div *ngIf=" data.status === 200; then thenBlock else elseBlock "></div>
@@ -42,10 +42,10 @@
                 </ng-template>
                 </td>
                 <td>
-                  {{data.endpoint}}
+                  {{data.endpoint_url}}
                 </td>
                 <td class="text-success"> 
-                  {{data.requestmethod}}
+                  {{data.request_method}}
                   <i class="mdi mdi-arrow-up"></i>
                 </td>
               </tr>
@@ -56,5 +56,3 @@
     </div>
   </div>
 </div>
-
-
