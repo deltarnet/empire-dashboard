@@ -10,7 +10,7 @@ import { Turntabl_Project, Endpoints, Status } from './endpoints';
   turntablproject_url:string = 'http://localhost:8050/api/v1/projects'
 
   constructor(private http: HttpClient) {
-    this.http.get<any>(window.location.origin + '/').subscribe(res => {
+    this.http.get<any>(window.location.origin + '/status_url').subscribe(res => {
       sessionStorage.setItem('turntablproject_url', res.turntablproject_url)
       sessionStorage.setItem('endpoints_url', res.endpoints_url)
     })
