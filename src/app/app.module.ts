@@ -13,6 +13,7 @@ import { DashboardComponent } from './dashboard/dashboard.component';
 import { StatusComponent } from './status/status.component';
 import { HttpClientModule } from '@angular/common/http';
 import { FormComponent } from './form/form.component';
+import { ResponseComponent } from './response/response.component';
 
 
 @NgModule({
@@ -23,7 +24,8 @@ import { FormComponent } from './form/form.component';
         FooterComponent,
         DashboardComponent,
         StatusComponent,
-        FormComponent
+        FormComponent,
+        ResponseComponent
 
 
     ],     

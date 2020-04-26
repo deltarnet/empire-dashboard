@@ -21,7 +21,7 @@ export class DashboardComponent implements OnInit {
     ngOnInit() {
         this.appservice.getStatus().subscribe(response => {
             this.retrieved_data = response
-            // console.log("Response oooooooo ",response);
+       
 
         })
     }

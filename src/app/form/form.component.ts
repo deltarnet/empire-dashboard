@@ -1,5 +1,7 @@
 import {  Component, OnInit } from '@angular/core';
 import { NgForm } from '@angular/forms';
+import { Observable } from 'rxjs';
+import { EmpireService } from '../empire.service';
 
 @Component({
     template: '',
@@ -16,7 +18,10 @@ import { NgForm } from '@angular/forms';
 
     public requestMethods: any[] = [{ requestMethods: '' }];
 
-    constructor() {}
+
+userObservable: Observable<any>;
+
+    constructor(private empireServie: EmpireService) {}
 
     ngOnInit() {}
 

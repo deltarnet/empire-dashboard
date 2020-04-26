@@ -40,5 +40,12 @@ import { Turntabl_Project, Endpoints, Status } from './endpoints';
   getStatusByProjectId(project_id: number): Observable<Status[]> {
     return this.http.get<Status[]>(this.testUrl + project_id);
   }
+
+  addProjects(project:Turntabl_Project): Observable<Turntabl_Project>{
+    return this.http.post<Turntabl_Project>(sessionStorage.getItem('turntablproject_url'), project);  
+  }
   
+  addEndpoints(endpoint:Endpoints): Observable<Endpoints>{
+    return this.http.post<Endpoints>(sessionStorage.getItem('endpoints_url'), endpoint);  
+  }
 }
