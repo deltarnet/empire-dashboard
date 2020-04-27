@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from "@angular/common/http";
 import { Observable } from 'rxjs'
-import { Turntabl_Project, Endpoints, Status } from './endpoints';
+import { Turntabl_Project, Endpoints, Status,RequestInput } from './endpoints';
 
 @Injectable({providedIn: 'root'})
  export class EmpireService {
@@ -41,11 +41,11 @@ import { Turntabl_Project, Endpoints, Status } from './endpoints';
     return this.http.get<Status[]>(this.testUrl + project_id);
   }
 
-  addProjects(project:Turntabl_Project): Observable<Turntabl_Project>{
-    return this.http.post<Turntabl_Project>(sessionStorage.getItem('turntablproject_url'), project);  
+  addProject(project:RequestInput): Observable<any>{
+    return this.http.post<RequestInput>('http://localhost:8050/api/v1/addNewProject', project);  
   }
   
   addEndpoints(endpoint:Endpoints): Observable<Endpoints>{
-    return this.http.post<Endpoints>(sessionStorage.getItem('endpoints_url'), endpoint);  
+    return this.http.post<Endpoints>('http://localhost:8050/api/v1/addNewEndpoint', endpoint);  
   }
 }
