@@ -8,10 +8,6 @@ This remarkably flexible and highly customizable template helps you create an am
 
 ## Demo
 
-Visit: https://www.bootstrapdash.com/demo/star-admin-angular/
-
-[![N|Solid](screenshot.jpg)](http://www.bootstrapdash.com/demo/star-admin-angular)
-
 ## Installation
 
 ### What's included
