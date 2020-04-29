@@ -8,7 +8,7 @@ import {RequestInput} from '../endpoints'
     templateUrl: './form.component.html',
     styleUrls: [
         './form.component.scss'
-    ]
+    ],
 })
 
 export class FormComponent implements OnInit {
