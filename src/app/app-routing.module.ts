@@ -8,7 +8,7 @@ import { ResponseComponent } from './response/response.component';
 const routes: Routes = [
   { path: '', redirectTo: '/dashboard', pathMatch: 'full' },
   { path: 'dashboard', component: DashboardComponent },
-  { path: 'status', component: StatusComponent },
+  { path: 'status/:project_id', component: StatusComponent },
   { path: 'form', component: FormComponent },  
   { path: 'response', component: ResponseComponent}, 
   
