@@ -1,5 +1,4 @@
 import {  Component, OnInit, ɵConsole } from '@angular/core';
-import { NgForm } from '@angular/forms';
 import { Observable } from 'rxjs';
 import { EmpireService } from '../empire.service';
 import {RequestInput} from '../endpoints'
@@ -42,7 +41,6 @@ userObservable: Observable<any>;
     }
     addEndpoint() {
         this.request.urls.push({endpoint_url: name})
-        // this.endpoints.push({endpoints: ''});
     }
 
     removeEndpoint(i : number) {
@@ -50,7 +48,6 @@ userObservable: Observable<any>;
     }
 
     logValue() {
-    // logValue(form : NgForm) {
 
         console.log(this.request)
         let request_method=this.request.request_method
@@ -64,14 +61,6 @@ userObservable: Observable<any>;
             })
         })
         
-       
-
-        // console.log(form);
-        // console.log(form.value);
-        // form.reset(form);
-        // console.log(value.projectName)
-        // console.log(this.projects);
-        // console.log(this.endpoints);
     }
 
 }
