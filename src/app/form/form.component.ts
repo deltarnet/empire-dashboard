@@ -1,4 +1,4 @@
-import {  Component, OnInit, ɵConsole } from '@angular/core';
+import {  Component, OnInit } from '@angular/core';
 import { Observable } from 'rxjs';
 import { EmpireService } from '../empire.service';
 import {RequestInput} from '../endpoints'
@@ -9,7 +9,9 @@ import {RequestInput} from '../endpoints'
     styleUrls: [
         './form.component.scss'
     ]
-}) export class FormComponent implements OnInit {
+})
+
+export class FormComponent implements OnInit {
 
     public projects: any[] = [{ project: '' }];
 
