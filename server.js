@@ -12,8 +12,8 @@ app.get('/*', function(req,res) {
 res.sendFile(path.join(__dirname+'/dist/index.html'));
 res.cookie("statusUrl", process.env.STATUS_URL);
 res.cookie("turntablproject_url", process.env.TURNTABLPROJECT_URL);
-res.cookie("ddNewProject", process.env.ADDNEWPROJECT);
-res.cookie("addNewEndpoint", process.env.ADDNEWENDPOINT);
+res.cookie("addNewProject_url", process.env.ADDNEWPROJECT);
+res.cookie("addNewEndpoint_url", process.env.ADDNEWENDPOINT);
 });
 
 
