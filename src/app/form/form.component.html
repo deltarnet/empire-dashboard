@@ -43,12 +43,13 @@
                    id="exampleInputEndpoint" 
                    placeholder="Enter Endpoint_url"
                    required>
+                   <div class="col-11 text-right">
+                    <button type="button" class="btn btn-danger btn-sm" (click)="removeEndpoint(i)"> Endpoint X</button>
+                </div>
                   </div>
                   <br>
+                 
                 </div>
-                <div class="col-11 text-right">
-                <button type="button" class="btn btn-danger btn-sm" (click)="removeEndpoint(i)"> Endpoint X</button>
-            </div>
                 <button  type="button" class="btn btn-danger mr-2" routerLink="/dashboard" routerLinkActive="active">Back</button>
                 <button type="submit" class="btn btn-success mr-2" value="Submit" (click)="logValue()"  routerLink="/response" routerLinkActive="active">Submit</button>
             </div>

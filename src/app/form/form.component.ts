@@ -3,12 +3,12 @@ import { Observable } from 'rxjs';
 import { EmpireService } from '../empire.service';
 import {RequestInput} from '../endpoints'
 @Component({
-    template: '',
     selector: 'app-form',
     templateUrl: './form.component.html',
     styleUrls: [
         './form.component.scss'
     ],
+    
 })
 
 export class FormComponent implements OnInit {

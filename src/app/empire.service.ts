@@ -1,15 +1,23 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from "@angular/common/http";
+import { CookieService } from "ngx-cookie-service";
 import { Observable } from 'rxjs'
 import { Turntabl_Project, Endpoints, Status,RequestInput } from './endpoints';
 
 @Injectable({providedIn: 'root'})
  export class EmpireService {
 
-    testUrl:string = 'http://localhost:8050/api/v1/status/'
-  turntablproject_url:string = 'http://localhost:8050/api/v1/projects'
+  statusUrl:string 
+  turntablproject_url:string 
+  addNewProject: string 
+  addNewEndpoint: string
 
-  constructor(private http: HttpClient) {
+  constructor(private http: HttpClient, private cookieservice: CookieService) {
+    this.statusUrl = this.cookieservice.get("statusUrl");
+    this.statusUrl = this.cookieservice.get("turntablproject_url");
+    this.statusUrl = this.cookieservice.get("addNewProject");
+    this.statusUrl = this.cookieservice.get("addNewEndpoint");
+    
     this.http.get<any>(window.location.origin + '/').subscribe(res => {
       sessionStorage.setItem('turntablproject_url', res.turntablproject_url)
       sessionStorage.setItem('endpoints_url', res.endpoints_url)
@@ -34,18 +42,18 @@ import { Turntabl_Project, Endpoints, Status,RequestInput } from './endpoints';
 
   getStatus(): Observable<Status[]> {
   // return this.http.get<Status[]>(sessionStorage.getItem('status_url'));
-  return this.http.get<Status[]>(this.testUrl);
+  return this.http.get<Status[]>(this.statusUrl);
   }
 
   getStatusByProjectId(project_id: number): Observable<Status[]> {
-    return this.http.get<Status[]>(this.testUrl + project_id);
+    return this.http.get<Status[]>(this.statusUrl + project_id);
   }
 
   addProject(project:RequestInput): Observable<any>{
-    return this.http.post<RequestInput>('http://localhost:8050/api/v1/addNewProject', project);  
+    return this.http.post<RequestInput>(this.addNewProject, project);  
   }
   
   addEndpoints(endpoint:Endpoints): Observable<Endpoints>{
-    return this.http.post<Endpoints>('http://localhost:8050/api/v1/addNewEndpoint', endpoint);  
+    return this.http.post<Endpoints>(this.addNewEndpoint, endpoint);  
   }
 }
