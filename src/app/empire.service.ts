@@ -15,14 +15,14 @@ import { Turntabl_Project, Endpoints, Status,RequestInput } from './endpoints';
   constructor(private http: HttpClient, private cookieservice: CookieService) {
     this.statusUrl = this.cookieservice.get("statusUrl");
     this.turntablproject_url = this.cookieservice.get("turntablproject_url");
-    this.addNewProject = this.cookieservice.get("addNewProject");
-    this.addNewEndpoints = this.cookieservice.get("addNewEndpoints");
+    this.addNewProject = this.cookieservice.get("addNewProject_url");
+    this.addNewEndpoints = this.cookieservice.get("addNewEndpoint_url");
     
     this.http.get<any>(window.location.origin + '/').subscribe(res => {
       sessionStorage.setItem('turntablproject_url', res.turntablproject_url)
       sessionStorage.setItem('endpoints_url', res.endpoints_url)
-      sessionStorage.setItem('addNewProject', res.addNewProject_url)
-      sessionStorage.setItem('addNewEndpoints', res.addNewEndpoints_url)
+      sessionStorage.setItem('addNewProject_url', res.addNewProject_url)
+      sessionStorage.setItem('addNewEndpoint_url', res.addNewEndpoints_url)
     })
   }
   getProjects(): Observable<Turntabl_Project[]> {
