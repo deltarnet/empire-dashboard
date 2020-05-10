@@ -20,6 +20,7 @@ export class Status{
     endpoint_id: number
     request_method: string
     project_name: string
+    time:string
 }
 
 export class RequestInput {

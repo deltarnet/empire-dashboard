@@ -15,7 +15,9 @@ export class FormComponent implements OnInit {
 
     public projects: any[] = [{ project: '' }];
 
-    public endpoints: any[] = [{ endpoints: '' }];
+    public endpoints: any[] = [{ 
+        endpoints: '' 
+    }];
 
     public requestMethods: any[] = [{ requestMethods: '' }];
 
@@ -48,7 +50,7 @@ userObservable: Observable<any>;
     }
 
     removeEndpoint(i : number) {
-        this.endpoints.splice(i, 1);
+        this.endpoints.splice(i);
     }
 
     logValue() {
