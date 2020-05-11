@@ -51,6 +51,10 @@ import { Turntabl_Project, Endpoints, Status,RequestInput } from './endpoints';
     return this.http.get<Status[]>(this.statusUrl + project_id);
   }
 
+  getTimeByProjectId(project_id: number): Observable<Status[]> {
+    return this.http.get<Status[]>(this.statusUrl + project_id);
+  }
+
   addProject(project:RequestInput): Observable<any>{
     return this.http.post<RequestInput>(this.addNewProject, project);  
   }
